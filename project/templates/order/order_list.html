@@ -1,0 +1,18 @@
+{% for order in orders %}
+    <article>
+        <ul>
+        <li>
+            Имя заказчика: {{ order.customer.first_name }}
+        </li>
+        <li>
+            Фамилия заказчика: {{ order.customer.last_name }}
+        </li>
+        <li>
+            Дата создания: {{ order.pub_date|date:"d E Y" }}
+        </li>
+        </ul>          
+        <p>{{ order.text|linebreaksbr }}</p>
+    </article> 
+    {% if not forloop.last %}<hr>{% endif %}
+{% endfor %}
+<a href={% url 'orders:profile' user%}>Вернутьcя в профиль</a>

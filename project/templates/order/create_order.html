@@ -1,0 +1,10 @@
+<p>Имя заказчика: {{ user.first_name }}</p>
+<p>Фамилия заказчика: {{ user.last_name }}</p>
+<p>Отчество заказчика: {{ user.middle_name }}</p>
+<p>Дата рождения заказчика: {{ user.birth_date }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Создать заказ">
+</form>
